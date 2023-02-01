@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('e1f0a2cbf9d43a63cc3506d7dd61e950');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '카카오톡 선물 도착!',
+        description: '신민규 님 에게 선물을 받으셨습니다! 선물받기 버튼을 눌러 선물을 받아보세요!',
+        imageUrl:
+          'https://cdn.discordapp.com/attachments/534234132239351916/1070296891499233340/-_-001_50.png',
+        link: {
+          mobileWebUrl: '사진클릭시 모바일 주소',
+          webUrl: '사진클릭시 PC 주소',
+        },
+      },
+      social: {
+        likeCount: 0, //99999가 최대입니다
+        commentCount: 0, //99999가 최대입니다
+        sharedCount: 0, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '선물받기',
+          link: {
+            mobileWebUrl: 'https://www.youtube.com/watch?v=uqW7fi5kIGk',
+            webUrl: 'https://www.youtube.com/watch?v=uqW7fi5kIGk',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
